@@ -28,3 +28,11 @@ THREE.MeshPhongMaterialクラスはフォン・シェーディングと言う、
 THREE.MeshToonMaterialクラスはアニメのようなトゥーンシェーディングを実現できるマテリアルです。MeshPhongMaterialクラスの拡張として用意されています。
 
 [https://ics.media/tutorial-three/material_variation/](https://ics.media/tutorial-three/material_variation/)
+
+
+## MeshStandardMaterial
+THREE.MeshStandardMaterialクラスは物理ベースレンダリングのマテリアルです。物理ベースレンダリングは多くの3Dアプリケーションで実装されているもので（UnityやUnrealなど）、光の反射や散乱など現実の物理現象を再現します。先述のMeshPhongMaterialやMeshLambertMaterialよりも調整できることが多く、現実味のある表現ができます。
+
+roughnessプロパティーの値によって、光沢感の有無を調整できます。0のときは光沢の質感、1のときはマットな質感になります。
+
+[https://threejs.org/docs/#api/en/materials/MeshStandardMaterial](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial)
