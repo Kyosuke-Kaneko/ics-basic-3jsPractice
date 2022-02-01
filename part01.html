@@ -39,7 +39,10 @@
         // const material = new THREE.MeshLambertMaterial({ color: 0x6699ff });
 
         // マテリアルを作成(MeshPhongMaterial)光源設定必要！！
-        const material = new THREE.MeshPhongMaterial({color: 0x6699FF});
+        // const material = new THREE.MeshPhongMaterial({color: 0x6699FF});
+
+        // マテリアルを作成(MeshToonMaterial)光源設定必要！！
+        const material = new THREE.MeshToonMaterial({color: 0x6699FF});
         // メッシュを作成
         const mesh = new THREE.Mesh(geometry, material);
         // 3D空間にメッシュを追加

@@ -23,3 +23,8 @@ THREE.MeshLambertMaterialクラスはランバート・シェーディングと�
 THREE.MeshPhongMaterialクラスはフォン・シェーディングと言う、光沢感のある質感を表現できるマテリアルです。
 
 [https://threejs.org/docs/#api/en/materials/MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial)
+
+## MeshToonMaterial
+THREE.MeshToonMaterialクラスはアニメのようなトゥーンシェーディングを実現できるマテリアルです。MeshPhongMaterialクラスの拡張として用意されています。
+
+[https://ics.media/tutorial-three/material_variation/](https://ics.media/tutorial-three/material_variation/)
