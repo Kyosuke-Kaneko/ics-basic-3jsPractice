@@ -18,3 +18,8 @@ THREE.MeshNormalMaterialクラスはノーマルのカラーをRGBで可視化�
 THREE.MeshLambertMaterialクラスはランバート・シェーディングと言う、光沢感のないマットな質感を表現できるマテリアルです。陰がでるため奥行き感を表現できます。陰影を必要とするマテリアルなので、ライトが必要となります。
 
 [https://threejs.org/docs/#api/en/materials/MeshLambertMaterial](https://threejs.org/docs/#api/en/materials/MeshLambertMaterial)
+
+## MeshPhongMaterial
+THREE.MeshPhongMaterialクラスはフォン・シェーディングと言う、光沢感のある質感を表現できるマテリアルです。
+
+[https://threejs.org/docs/#api/en/materials/MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial)
