@@ -31,12 +31,28 @@
         const geometry = new THREE.TorusGeometry(300, 100, 64, 100);
         // マテリアルを作成(MeshBasicMaterial)
         // const material = new THREE.MeshBasicMaterial({ color: 0x6699ff });
-        // マテリアルを作成
-        const material = new THREE.MeshNormalMaterial();
+
+        // マテリアルを作成(MeshNormalMaterial)
+        // const material = new THREE.MeshNormalMaterial();
+
+        // マテリアルを作成(MeshLambertMaterial)光源設定必要！！
+        const material = new THREE.MeshLambertMaterial({ color: 0x6699ff });
         // メッシュを作成
         const mesh = new THREE.Mesh(geometry, material);
         // 3D空間にメッシュを追加
         scene.add(mesh);
+
+        // 光源設定
+        // 平行光源(常に一定方向から当てる光の設定)
+        const directionalLight = new THREE.DirectionalLight(0xffffff);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+
+        // ポイント光源（周回する光の設定）
+        const pointLight = new THREE.PointLight(0xffffff, 2, 1000);
+        scene.add(pointLight);
+        const pointLightHelper = new THREE.PointLightHelper(pointLight, 30);
+        scene.add(pointLightHelper);
 
         tick();
 
@@ -45,6 +61,13 @@
           // メッシュを回転させる
           mesh.rotation.x += 0.01;
           mesh.rotation.y += 0.01;
+
+          // ライトを周回させる
+          pointLight.position.set(
+            500 * Math.sin(Date.now() / 500),
+            500 * Math.sin(Date.now() / 1000),
+            500 * Math.cos(Date.now() / 500)
+          );
 
           // レンダリング
           renderer.render(scene, camera);

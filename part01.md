@@ -13,3 +13,8 @@ THREE.MeshBasicMaterialクラスはライティングを考慮しないマテリ
 THREE.MeshNormalMaterialクラスはノーマルのカラーをRGBで可視化するマテリアルです。ライティングを必要としないため、手軽に動作確認するときに役立つでしょう。
 
 [https://threejs.org/docs/#api/en/materials/MeshNormalMaterial](https://threejs.org/docs/#api/en/materials/MeshNormalMaterial)
+
+## MeshLambertMaterial
+THREE.MeshLambertMaterialクラスはランバート・シェーディングと言う、光沢感のないマットな質感を表現できるマテリアルです。陰がでるため奥行き感を表現できます。陰影を必要とするマテリアルなので、ライトが必要となります。
+
+[https://threejs.org/docs/#api/en/materials/MeshLambertMaterial](https://threejs.org/docs/#api/en/materials/MeshLambertMaterial)
