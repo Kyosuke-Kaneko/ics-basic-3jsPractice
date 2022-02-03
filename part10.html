@@ -3,7 +3,10 @@
     <meta charset="utf-8" />
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+    <!-- Daeファイルに必要 -->
     <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/ColladaLoader.js"></script>
+    <!-- 3dsファイルに必要 -->
+    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/TDSLoader.js"></script>
 
     <script>
       // ページの読み込みを待つ
@@ -30,7 +33,7 @@
         // カメラの初期座標を設定
         camera.position.set(0, 10, 10);
 
-        // カメラコントローラーを作成
+        // カメラコントローラーを作成（手動で変えれる）
         const controls = new THREE.OrbitControls(camera, canvasElement);
         controls.target.set(0, 3, 0);
         controls.update();
@@ -43,14 +46,26 @@
         const ambientLight = new THREE.AmbientLight(0x333333);
         scene.add(ambientLight);
 
+        // ①3dsファイル
         // 3DS形式のモデルデータを読み込む
-        const loader = new THREE.ColladaLoader();
+        const loader = new THREE.TDSLoader();
+        // テクスチャーのパスを指定
+        loader.setResourcePath('models/3ds/portalgun/textures/');
         // 3dsファイルのパスを指定
-        loader.load('./models/collada/elf/elf.dae', (collada) => {
+        loader.load('models/3ds/portalgun/portalgun.3ds', (object) => {
           // 読み込み後に3D空間に追加
-          const model = collada.scene;
-          scene.add(model);
+          scene.add(object);
         });
+
+        // ②Daeファイル
+        // // 3DS形式のモデルデータを読み込む
+        // const loader = new THREE.ColladaLoader();
+        // // 3dsファイルのパスを指定
+        // loader.load('./models/collada/elf/elf.dae', (collada) => {
+        //   // 読み込み後に3D空間に追加
+        //   const model = collada.scene;
+        //   scene.add(model);
+        // });
 
         tick();
 
