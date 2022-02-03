@@ -13,3 +13,8 @@ DirectionalLightクラスは特定の方向に放射される光。光源は無�
 一定の方向から当てられている光
 
 [https://threejs.org/docs/#api/en/lights/DirectionalLight](https://threejs.org/docs/#api/en/lights/DirectionalLight)
+
+## HemisphereLight(半球光源)
+HemisphereLightクラスはAmbientLightクラスに似ていますが、上からの光の色と下からの光の色を分けられます。下からの光は反射光として、屋外での光の見え方に近くなります。
+
+[https://threejs.org/docs/#api/en/lights/HemisphereLight](https://threejs.org/docs/#api/en/lights/HemisphereLight)
