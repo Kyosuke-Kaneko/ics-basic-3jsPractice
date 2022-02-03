@@ -30,3 +30,11 @@ PointLightクラスは単一点からあらゆる方向から放射される光�
 SpotLightクラスは、単一の点から一方向に放出され、円錐に沿って放出される光源です。わかりやすい例としては懐中電灯や、ステージのスポットライトを想像するといいでしょう。減衰率や光の方向の指定ができるので、指定できるパラメーターも多いです。たくさん配置すれば立体感・臨場感が生まれます。
 
 [https://threejs.org/docs/#api/en/lights/SpotLight](https://threejs.org/docs/#api/en/lights/SpotLight)
+
+## RectAreaLight(矩形光源)
+
+RectAreaLightクラスは、面を横切って矩形平面に均一に放出される光源です。明るい窓やストリップ照明のようなものをシミュレートするために使用できます。
+
+[https://threejs.org/docs/#api/en/lights/RectAreaLight](https://threejs.org/docs/#api/en/lights/RectAreaLight)
+
+RectAreaLightUniformsLib.jsはいまいちわからなかった

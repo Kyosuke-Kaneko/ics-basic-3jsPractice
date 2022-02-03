@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+    
     <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -70,11 +71,19 @@
 
          // スポットライト光源を作成
         // new THREE.SpotLight(色, 光の強さ, 距離, 角度, ボケ具合, 減衰率(光の弱まり方))
-        const light = new THREE.SpotLight(0xffffff, 4, 50, Math.PI / 4, 0, 0.5);
+        // const light = new THREE.SpotLight(0xffffff, 4, 50, Math.PI / 4, 0, 0.5);
+        // scene.add(light);
+        // // ヘルパーを作成
+        // const lightHelper = new THREE.SpotLightHelper(light);
+        // scene.add(lightHelper);
+
+        // 矩形光源を作成
+        // new THREE.RectAreaLight(色, 光の強さ, 幅, 高さ)
+        const light = new THREE.RectAreaLight(0xffffff, 5.0, 10, 10);
         scene.add(light);
-        // ヘルパーを作成
-        const lightHelper = new THREE.SpotLightHelper(light);
-        scene.add(lightHelper);
+        // ヘルパーを作成
+        // const lightHelper = new THREE.RectAreaLightHelper(light);
+        // scene.add(lightHelper);
 
 
         tick();
@@ -91,12 +100,15 @@
           const lz = r * Math.sin(t);
           const ly = 6.0 + 5.0 * Math.sin(t / 3.0);
           light.position.set(lx, ly, lz);
-          lightHelper.update();
+          // lightHelper.update();
+          // 光の陰影が変わっていく
+          // light.lookAt(new THREE.Vector3(0, 0, 0));
 
           requestAnimationFrame(tick);
         }
       }
     </script>
+    <script src="./RectAreaLightUniformsLib.js"></script>
   </head>
   <body>
     <canvas id="myCanvas"></canvas>
