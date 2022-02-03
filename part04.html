@@ -26,9 +26,12 @@
         const scene = new THREE.Scene();
 
         // new THREE.PerspectiveCamera(視野角, アスペクト比, near, far)
-        const camera = new THREE.PerspectiveCamera(45, width / height, 1, 2000);
-        // fovはField of View＝視野角
-        camera.fov = 90; 
+        // const camera = new THREE.PerspectiveCamera(45, width / height, 1, 2000);
+        // // fovはField of View＝視野角
+        // camera.fov = 3; 
+
+        // // new THREE.OrthographicCamera(left, right, top, bottom, near, far)
+        const camera = new THREE.OrthographicCamera(-480, +480, 270, -270);
 
         // 光源を作成
         {
